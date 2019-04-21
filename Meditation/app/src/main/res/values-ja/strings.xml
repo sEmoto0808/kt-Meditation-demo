@@ -1,0 +1,73 @@
+<resources>
+    <string name="app_name">瞑想</string>
+
+    <!--Botton Navigation Menu -->
+    <string name="bottom_navi_lavel">レベル</string>
+    <string name="bottom_navi_theme">テーマ</string>
+    <string name="bottom_navi_time">時間</string>
+    <string name="bottom_navi_share">シェア</string>
+
+    <!--Meiso Screen -->
+    <string name="minute">分</string>
+
+    <string name="level_easy_header">入門</string>
+    <string name="level_normal_header">初級</string>
+    <string name="level_mid_header">中級</string>
+    <string name="level_high_header">上級</string>
+
+    <string name="theme_silent">静寂</string>
+    <string name="theme_cave">洞窟</string>
+    <string name="theme_spring_mt">春の山</string>
+    <string name="theme_summer_mt">夏の山</string>
+    <string name="theme_autumn_rice_field">秋の田んぼ</string>
+    <string name="theme_stream">小川のせせらぎ</string>
+    <string name="theme_windbells">風鈴</string>
+    <string name="theme_fireworks">たき火</string>
+
+    <string name="starts_in">瞑想開始まであと</string>
+
+    <string name="inhale">息を吸う</string>
+    <string name="hold">止める</string>
+    <string name="exhale">息を吐く</string>
+
+    <string name="meiso_finish">瞑想終了</string>
+
+    <string name="show_menu_again">メニューを表示させるにはこの瞑想を一旦終了して下さい。</string>
+
+    <!-- Nortification-->
+    <string name="notification_title">瞑想アプリ起動中</string>
+    <string name="notification_text">タップしてアプリに戻る</string>
+
+    <!--Dialog : ThemeData Select -->
+    <string name="select_theme">テーマを選んでください</string>
+
+    <!--Dialog : Level Select -->
+    <string name="select_level">レベルを選んでください</string>
+    <string-array name="level_list">
+        <item>1:入門 => 4秒[吸う]－4秒[止める]－4秒[吐く]</item>
+        <item>2:初級 => 4秒[吸う]－4秒[止める]－8秒[吐く]</item>
+        <item>3:中級 => 4秒[吸う]－8秒[止める]－8秒[吐く]</item>
+        <item>4:上級 => 4秒[吸う]－16秒[止める]－8秒[吐く]</item>
+    </string-array>
+
+    <string name="level_easy">1:入門 => 4秒[吸う]－4秒[止める]－4秒[吐く]</string>
+    <string name="level_normal">2:初級 => 4秒[吸う]－4秒[止める]－8秒[吐く]</string>
+    <string name="level_mid">3:中級 => 4秒[吸う]－8秒[止める]－8秒[吐く]</string>
+    <string name="level_high">4:上級 => 4秒[吸う]－16秒[止める]－8秒[吐く]</string>
+
+    <!--Dialog : Time Select -->
+    <string name="select_time">時間を選んでください</string>
+    <string-array name="time_list">
+        <item>5分</item>
+        <item>10分</item>
+        <item>15分</item>
+        <item>20分</item>
+        <item>30分</item>
+        <item>45分</item>
+        <item>60分</item>
+    </string-array>
+
+    <!--時間微調整文言 -->
+    <string name="time_adjusted">呼吸サイクルに合うように残り時間が微調整されることがあります。</string>
+
+</resources>

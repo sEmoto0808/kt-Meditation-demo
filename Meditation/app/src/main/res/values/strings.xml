@@ -1,4 +1,75 @@
 <resources>
     <string name="app_name">Meditation</string>
-    <string name="action_settings">Settings</string>
+
+    <!--Botton Navigation Menu -->
+    <string name="bottom_navi_lavel">Level</string>
+    <string name="bottom_navi_theme">Theme</string>
+    <string name="bottom_navi_time">Time</string>
+    <string name="bottom_navi_share">Share</string>
+
+    <!--Meiso Screen -->
+    <string name="minute">min</string>
+
+    <string name="level_easy_header">Beginner</string>
+    <string name="level_normal_header">Novice</string>
+    <string name="level_mid_header">Intermediate</string>
+    <string name="level_high_header">Advanced</string>
+
+    <string name="theme_silent">Silent</string>
+    <string name="theme_cave">Cave</string>
+    <string name="theme_spring_mt">Spring Mountain</string>
+    <string name="theme_summer_mt">Summer Mountain</string>
+    <string name="theme_autumn_rice_field">Autumn Rice Fields</string>
+    <string name="theme_stream">Stream</string>
+    <string name="theme_windbells">Wind Bells</string>
+    <string name="theme_fireworks">Bonfire</string>
+
+    <string name="starts_in">Meditation will start in</string>
+
+    <string name="inhale">Inhale</string>
+    <string name="hold">Hold</string>
+    <string name="exhale">Exhale</string>
+
+    <string name="meiso_finish">Finished</string>
+
+    <string name="show_menu_again">Stop this meditation to display the menu.</string>
+
+
+    <!-- Nortification-->
+    <string name="notification_title">Meditation App is Running</string>
+    <string name="notification_text">Tap to return to the app</string>
+
+    <!--Dialog : ThemeData Select -->
+    <string name="select_theme">Choose a Theme</string>
+
+    <!--Dialog : Level Select -->
+    <string name="select_level">Choose a Level</string>
+    <string-array name="level_list">
+        <item>1:Beginner => 4s[Inhale]－4s[Hold]－4s[Exhale]</item>
+        <item>2:Novice => 4s[Inhale]－4s[Hold]－8s[Exhale]</item>
+        <item>3:Intermediate => 4s[Inhale]－8s[Hold]－8s[Exhale]</item>
+        <item>4:Advamced => 4s[Inhale]－16s[Hold]－8s[Exhale]</item>
+    </string-array>
+
+    <string name="level_easy">1:Beginner => 4s[Inhale]－4s[Hold]－4s[Exhale]</string>
+    <string name="level_normal">2:Novice => 4s[Inhale]－4s[Hold]－8s[Exhale]</string>
+    <string name="level_mid">3:Intermediate => 4s[Inhale]－8s[Hold]－8s[Exhale]</string>
+    <string name="level_high">4:Advamced => 4s[Inhale]－16s[Hold]－8s[Exhale]</string>
+
+    <!--Dialog : Time Select -->
+    <string name="select_time">Choose a Time</string>
+    <string-array name="time_list">
+        <item>5min</item>
+        <item>10min</item>
+        <item>15min</item>
+        <item>20min</item>
+        <item>30min</item>
+        <item>45min</item>
+        <item>60min</item>
+    </string-array>
+
+    <!--時間微調整文言 -->
+    <string name="time_adjusted">The remaining time may be fine-tuned to match the breathing cycle.</string>
+
+
 </resources>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:title="@string/bottom_navi_lavel" android:id="@+id/item_select_level"
+          android:icon="@drawable/ic_network_check_black_24dp"/>
+    <item android:title="@string/bottom_navi_theme" android:id="@+id/item_select_theme"
+          android:icon="@drawable/ic_landscape_black_24dp"/>
+    <item android:title="@string/bottom_navi_time" android:id="@+id/item_select_time"
+          android:icon="@drawable/ic_timer_black_24dp"/>
+</menu>
