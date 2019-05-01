@@ -67,8 +67,12 @@ class MainActivity : AppCompatActivity() {
                 PlayStatus.ON_START -> {
                     btmNavi.visibility = View.INVISIBLE
                 }
-                PlayStatus.RUNNING -> {}
-                PlayStatus.PAUSE -> {}
+                PlayStatus.RUNNING -> {
+                    btmNavi.visibility = View.INVISIBLE
+                }
+                PlayStatus.PAUSE -> {
+                    btmNavi.visibility = View.INVISIBLE
+                }
                 PlayStatus.END -> {}
             }
         })

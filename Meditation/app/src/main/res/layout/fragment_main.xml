@@ -139,7 +139,8 @@
                 android:layout_height="60dp"
                 android:visibility="invisible"
                 app:layout_constraintBottom_toBottomOf="@+id/btnPlay"
-                app:layout_constraintStart_toStartOf="@+id/volumeSeekBar"/>
+                app:layout_constraintStart_toStartOf="@+id/volumeSeekBar"
+                android:onClick="@{ () -> viewmodel.finishMeditation() }"/>
 
         <TextView
                 android:id="@+id/txtMsgUpperSmall"

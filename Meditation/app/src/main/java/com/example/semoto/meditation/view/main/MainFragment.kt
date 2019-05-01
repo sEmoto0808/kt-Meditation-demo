@@ -19,6 +19,7 @@ import com.example.semoto.meditation.R
 import com.example.semoto.meditation.databinding.FragmentMainBinding
 import com.example.semoto.meditation.util.PlayStatus
 import kotlinx.android.synthetic.main.fragment_main.*
+import kotlinx.android.synthetic.main.fragment_main.view.*
 
 
 /**
@@ -64,10 +65,18 @@ class MainFragment : Fragment() {
 
             when (status) {
                 PlayStatus.BEFORE_START -> {}
-                PlayStatus.ON_START -> {}
-                PlayStatus.RUNNING -> {}
-                PlayStatus.PAUSE -> {}
-                PlayStatus.END -> {}
+                PlayStatus.ON_START -> {
+                    viewModel.countDownBeforeStart()
+                }
+                PlayStatus.RUNNING -> {
+                    viewModel.startMeditation()
+                }
+                PlayStatus.PAUSE -> {
+                    viewModel.pauseMeditation()
+                }
+                PlayStatus.END -> {
+                    viewModel.finishMeditation()
+                }
             }
         })
 
@@ -96,8 +105,29 @@ class MainFragment : Fragment() {
                     txtShowMenu.visibility = View.VISIBLE
                 }
             }
-            PlayStatus.RUNNING -> {}
-            PlayStatus.PAUSE -> {}
+            PlayStatus.RUNNING -> {
+                binding.apply {
+                    btnPlay.apply {
+                        visibility = View.VISIBLE
+                        setBackgroundResource(R.drawable.button_pause)
+                    }
+                    btnFinish.visibility = View.INVISIBLE
+                    txtShowMenu.visibility = View.VISIBLE
+                }
+            }
+            PlayStatus.PAUSE -> {
+                binding.apply {
+                    btnPlay.apply {
+                        visibility = View.VISIBLE
+                        setBackgroundResource(R.drawable.button_play)
+                    }
+                    btnFinish.apply {
+                        visibility = View.VISIBLE
+                        setBackgroundResource(R.drawable.button_finish)
+                    }
+                    txtShowMenu.visibility = View.VISIBLE
+                }
+            }
             PlayStatus.END -> {}
         }
 
