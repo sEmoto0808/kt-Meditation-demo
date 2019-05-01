@@ -1,4 +1,4 @@
-package com.example.semoto.meditation
+package com.example.semoto.meditation.util
 
 enum class FragmentTag{
     MEISO,

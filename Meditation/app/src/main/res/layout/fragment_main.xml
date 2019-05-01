@@ -8,14 +8,14 @@
 
         <variable
                 name="viewmodel"
-                type="com.example.semoto.meditation.MainViewModel"/>
+                type="com.example.semoto.meditation.viewmodel.MainViewModel"/>
 
     </data>
 
     <android.support.constraint.ConstraintLayout android:id="@+id/meditation_screen"
                                                  android:layout_width="match_parent"
                                                  android:layout_height="match_parent"
-                                                 tools:context="MainFragment">
+                                                 tools:context=".view.main.MainFragment">
 
         <LinearLayout
                 android:id="@+id/linearLayoutIcon"

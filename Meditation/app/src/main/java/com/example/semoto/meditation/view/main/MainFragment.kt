@@ -1,4 +1,4 @@
-package com.example.semoto.meditation
+package com.example.semoto.meditation.view.main
 
 
 import android.arch.lifecycle.Observer
@@ -14,7 +14,10 @@ import android.view.ViewGroup
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.target.SimpleTarget
 import com.bumptech.glide.request.transition.Transition
+import com.example.semoto.meditation.viewmodel.MainViewModel
+import com.example.semoto.meditation.R
 import com.example.semoto.meditation.databinding.FragmentMainBinding
+import com.example.semoto.meditation.util.PlayStatus
 import kotlinx.android.synthetic.main.fragment_main.*
 
 
@@ -32,7 +35,8 @@ class MainFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_main, container, false)
+        binding = DataBindingUtil.inflate(inflater,
+            R.layout.fragment_main, container, false)
         return binding.root
     }
 

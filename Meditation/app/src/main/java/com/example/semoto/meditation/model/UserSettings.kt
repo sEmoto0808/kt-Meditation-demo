@@ -1,4 +1,4 @@
-package com.example.semoto.meditation
+package com.example.semoto.meditation.model
 
 data class UserSettings(
     var levelId: Int,

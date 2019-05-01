@@ -1,4 +1,4 @@
-package com.example.semoto.meditation
+package com.example.semoto.meditation.data
 
 data class ThemeData(
     val themeId: Int,

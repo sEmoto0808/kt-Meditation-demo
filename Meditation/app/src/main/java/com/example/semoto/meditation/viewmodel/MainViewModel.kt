@@ -1,7 +1,11 @@
-package com.example.semoto.meditation
+package com.example.semoto.meditation.viewmodel
 
 import android.arch.lifecycle.MutableLiveData
 import android.arch.lifecycle.ViewModel
+import com.example.semoto.meditation.data.ThemeData
+import com.example.semoto.meditation.model.UserSettings
+import com.example.semoto.meditation.model.UserSettingsRepository
+import com.example.semoto.meditation.util.PlayStatus
 
 class MainViewModel: ViewModel() {
 
@@ -42,6 +46,24 @@ class MainViewModel: ViewModel() {
         val secondsString = if (seconds < 10) "0" + seconds.toString() else seconds.toString()
 
         return "$minutesString : $secondsString"
+    }
+
+    fun setLevel(selectedItemId: Int) {
+
+        txtLevel.value = userSettingsRepository.setLevel(selectedItemId)
+    }
+
+    fun setTime(selectedItemId: Int) {
+
+        remainedTimeSeconds.value = userSettingsRepository.setTime(selectedItemId) * 60
+        displayTimeSeconds.value = changeTimeFormat(userSettingsRepository.setTime(selectedItemId) * 60)
+    }
+
+    fun setTheme(themeData: ThemeData) {
+
+        userSettingsRepository.setTheme(themeData)
+        txtTheme.value = userSettingsRepository.loadUserSettings().themeName
+        themePicFileResId.value = userSettingsRepository.loadUserSettings().themeResId
     }
 
 }
