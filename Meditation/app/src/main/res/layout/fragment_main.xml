@@ -130,7 +130,8 @@
                 app:layout_constraintBottom_toTopOf="@+id/volumeSeekBar"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/txtMsgLowerLarge"/>
+                app:layout_constraintTop_toBottomOf="@+id/txtMsgLowerLarge"
+                android:onClick="@{ () -> viewmodel.changeStatus() }"/>
 
         <Button
                 android:id="@+id/btnFinish"

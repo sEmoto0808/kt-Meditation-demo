@@ -1,16 +1,23 @@
 package com.example.semoto.meditation.view.main
 
 
+import android.arch.lifecycle.Observer
+import android.arch.lifecycle.ViewModelProviders
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
+import android.view.View
 import com.example.semoto.meditation.R
 import com.example.semoto.meditation.util.FragmentTag
+import com.example.semoto.meditation.util.PlayStatus
 import com.example.semoto.meditation.view.dialog.LevelSelectDialog
 import com.example.semoto.meditation.view.dialog.ThemeSelectDialog
 import com.example.semoto.meditation.view.dialog.TimeSelectDialog
+import com.example.semoto.meditation.viewmodel.MainViewModel
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
+
+    private lateinit var viewModel: MainViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
 
@@ -27,6 +34,9 @@ class MainActivity : AppCompatActivity() {
                 )
                 .commit()
         }
+
+        viewModel = ViewModelProviders.of(this).get(MainViewModel::class.java)
+        observeViewModel()
 
         btmNavi.setOnNavigationItemSelectedListener { item ->
             when (item.itemId) {
@@ -45,5 +55,22 @@ class MainActivity : AppCompatActivity() {
                 else -> { false }
             }
         }
+    }
+
+    private fun observeViewModel() {
+
+        viewModel.playStatus.observe(this, Observer { status ->
+            when (status) {
+                PlayStatus.BEFORE_START -> {
+                    btmNavi.visibility = View.VISIBLE
+                }
+                PlayStatus.ON_START -> {
+                    btmNavi.visibility = View.INVISIBLE
+                }
+                PlayStatus.RUNNING -> {}
+                PlayStatus.PAUSE -> {}
+                PlayStatus.END -> {}
+            }
+        })
     }
 }

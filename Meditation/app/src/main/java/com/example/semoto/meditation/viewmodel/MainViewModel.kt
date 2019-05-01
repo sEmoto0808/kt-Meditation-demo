@@ -66,4 +66,14 @@ class MainViewModel: ViewModel() {
         themePicFileResId.value = userSettingsRepository.loadUserSettings().themeResId
     }
 
+    fun changeStatus() {
+
+        val currentStatus = playStatus.value
+        when (currentStatus) {
+            PlayStatus.BEFORE_START -> { playStatus.value = PlayStatus.ON_START }
+            PlayStatus.RUNNING -> { playStatus.value = PlayStatus.PAUSE }
+            PlayStatus.PAUSE -> { playStatus.value = PlayStatus.RUNNING }
+        }
+    }
+
 }
