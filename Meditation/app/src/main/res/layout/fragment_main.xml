@@ -117,7 +117,8 @@
                 android:thumb="@drawable/ic_adjust_black_24dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"/>
+                app:layout_constraintStart_toStartOf="parent"
+                android:onProgressChanged="@{ (seekBar, progress, fromUser) -> viewmodel.setVolume(progress) }"/>
 
         <Button
                 android:id="@+id/btnPlay"
