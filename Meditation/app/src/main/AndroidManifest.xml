@@ -3,13 +3,13 @@
           package="com.example.semoto.meditation">
 
     <application
+            android:name=".MyApplication"
             android:allowBackup="true"
             android:icon="@mipmap/ic_launcher"
             android:label="@string/app_name"
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
-            android:theme="@style/AppTheme"
-            android:name=".MyApplication">
+            android:theme="@style/AppTheme">
         <activity
                 android:name=".view.main.MainActivity"
                 android:label="@string/app_name"
@@ -20,6 +20,12 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
+
+        <service
+                android:name=".service.MusicService"
+                android:enabled="true"
+                android:exported="true">
+        </service>
     </application>
 
 </manifest>

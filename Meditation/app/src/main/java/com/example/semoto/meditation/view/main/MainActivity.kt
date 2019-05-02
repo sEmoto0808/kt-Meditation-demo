@@ -3,10 +3,17 @@ package com.example.semoto.meditation.view.main
 
 import android.arch.lifecycle.Observer
 import android.arch.lifecycle.ViewModelProviders
+import android.content.ComponentName
+import android.content.Context
+import android.content.Intent
+import android.content.ServiceConnection
 import android.os.Bundle
+import android.os.IBinder
 import android.support.v7.app.AppCompatActivity
 import android.view.View
 import com.example.semoto.meditation.R
+import com.example.semoto.meditation.service.MusicService
+import com.example.semoto.meditation.service.MusicServiceHelper
 import com.example.semoto.meditation.util.FragmentTag
 import com.example.semoto.meditation.util.PlayStatus
 import com.example.semoto.meditation.view.dialog.LevelSelectDialog
@@ -18,6 +25,8 @@ import kotlinx.android.synthetic.main.activity_main.*
 class MainActivity : AppCompatActivity() {
 
     private lateinit var viewModel: MainViewModel
+
+    private var musicServiceHelper: MusicServiceHelper? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
 
@@ -55,6 +64,15 @@ class MainActivity : AppCompatActivity() {
                 else -> { false }
             }
         }
+
+        musicServiceHelper = MusicServiceHelper(this)
+        musicServiceHelper?.bindService()
+    }
+
+    override fun onBackPressed() {
+        super.onBackPressed()
+        musicServiceHelper?.stopBgm()
+        finish()
     }
 
     private fun observeViewModel() {
@@ -69,11 +87,16 @@ class MainActivity : AppCompatActivity() {
                 }
                 PlayStatus.RUNNING -> {
                     btmNavi.visibility = View.INVISIBLE
+                    musicServiceHelper?.startBgm()
                 }
                 PlayStatus.PAUSE -> {
                     btmNavi.visibility = View.INVISIBLE
+                    musicServiceHelper?.stopBgm()
                 }
-                PlayStatus.END -> {}
+                PlayStatus.END -> {
+                    musicServiceHelper?.stopBgm()
+                    musicServiceHelper?.ringFinalGong()
+                }
             }
         })
     }
