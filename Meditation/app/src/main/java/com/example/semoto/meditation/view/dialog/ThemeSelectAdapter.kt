@@ -12,8 +12,10 @@ import com.example.semoto.meditation.viewmodel.MainViewModel
 import kotlinx.android.extensions.LayoutContainer
 import kotlinx.android.synthetic.main.theme_detail_card.*
 
-class ThemeSelectAdapter(private val themeList: ArrayList<ThemeData>,
-                         private val viewModel: MainViewModel) : RecyclerView.Adapter<ThemeSelectAdapter.ViewHolder>() {
+class ThemeSelectAdapter(
+    private val themeList: ArrayList<ThemeData>,
+    private val viewModel: MainViewModel
+) : RecyclerView.Adapter<ThemeSelectAdapter.ViewHolder>() {
 
     private val appContext = MyApplication.appContext
 
@@ -41,7 +43,8 @@ class ThemeSelectAdapter(private val themeList: ArrayList<ThemeData>,
     }
 
 
-    inner class ViewHolder(override val containerView: View?): RecyclerView.ViewHolder(containerView!!), LayoutContainer {}
+    inner class ViewHolder(override val containerView: View?) : RecyclerView.ViewHolder(containerView!!),
+        LayoutContainer {}
 
 
 }

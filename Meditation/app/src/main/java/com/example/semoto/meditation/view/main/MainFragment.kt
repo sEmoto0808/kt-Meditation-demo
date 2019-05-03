@@ -21,6 +21,7 @@ import com.example.semoto.meditation.databinding.FragmentMainBinding
 import com.example.semoto.meditation.util.PlayStatus
 import kotlinx.android.synthetic.main.fragment_main.*
 import kotlinx.android.synthetic.main.fragment_main.view.*
+import org.koin.android.viewmodel.ext.android.sharedViewModel
 
 
 /**
@@ -29,7 +30,8 @@ import kotlinx.android.synthetic.main.fragment_main.view.*
  */
 class MainFragment : Fragment() {
 
-    lateinit var viewModel: MainViewModel
+//    lateinit var viewModel: MainViewModel
+    private  val viewModel: MainViewModel by sharedViewModel()
     private lateinit var binding: FragmentMainBinding
 
     override fun onCreateView(
@@ -46,7 +48,7 @@ class MainFragment : Fragment() {
         super.onActivityCreated(savedInstanceState)
 
         // sharedViewModel
-        viewModel = ViewModelProviders.of(activity!!).get(MainViewModel::class.java)
+//        viewModel = ViewModelProviders.of(activity!!).get(MainViewModel::class.java)
 
         binding.apply {
             viewmodel = viewModel

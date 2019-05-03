@@ -3,8 +3,10 @@ package com.example.semoto.meditation
 import android.app.Application
 import android.content.Context
 import com.example.semoto.meditation.data.ThemeData
+import com.example.semoto.meditation.di.appModule
 import com.example.semoto.meditation.util.NO_BGM
 import com.example.semoto.meditation.util.ThemeId
+import org.koin.android.ext.android.startKoin
 
 class MyApplication: Application() {
 
@@ -13,6 +15,8 @@ class MyApplication: Application() {
 
         appContext = this
         themeList = setThemeData()
+
+        startKoin(this, listOf(appModule))
     }
 
     private fun setThemeData(): ArrayList<ThemeData> {
